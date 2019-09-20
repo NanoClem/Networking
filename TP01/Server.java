@@ -73,7 +73,9 @@ public class SingleServer {
 	        	try {
 	        		Thread.sleep(10000);
 	        	}
-	        	catch(Exception e) {}
+	        	catch(Exception e) {
+	        		System.out.println("Exception: " + e);
+	        	}
 
 	        	//Sending response
 	        	timeStamp    = new java.util.Date().toString();
@@ -87,7 +89,9 @@ public class SingleServer {
 		try {
 			connection.close();
 		}
-		catch(IOException e) {}
+		catch(IOException e) {
+			System.out.println("IOException: " + e);
+		}
 	}
 
 
@@ -102,7 +106,9 @@ public class SingleServer {
 	        osw.write(message);
 	        osw.flush();
 		}
-		catch(IOException e) {}
+		catch(IOException e) {
+			System.out.println("IOException: " + e);
+		}
 	}
 
 }

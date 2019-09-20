@@ -64,7 +64,9 @@ public class Client {
 		    osw.write(message);
 		    osw.flush();
 		}
-		catch(IOException e) {}
+		catch(IOException e) {
+			System.out.println("IOException: " + e);
+		}
 		
 	}
 
@@ -72,10 +74,10 @@ public class Client {
 	/**
 	 * Read from socket
 	 */
-	/*public void read()
+	public void read()
 	{
-
-	}*/
+		
+	}
 
 
 }
