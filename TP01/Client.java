@@ -41,11 +41,10 @@ public class Client {
 		try {
 			InetAddress address     = InetAddress.getByName(host);		// address object containing the couple (name,host)
 			Socket connection       = new Socket(address, port); 		// instanciate a socket connection
-
 			//Writing message
 			timeStamp      = new java.util.Date().toString();
 	    	String message = "Calling the Socket Server on "+ host + " port " + port + " at " + timeStamp +  (char) 13;
-			write("", connection);
+			write(message, connection);
 		}
 		catch(IOException e) {}
 	}
@@ -59,15 +58,12 @@ public class Client {
 		try {
 			BufferedOutputStream os = new BufferedOutputStream(connection.getOutputStream()); 	// container for writing to the socket
 			OutputStreamWriter osw  = new OutputStreamWriter(os, "US-ASCII");					// instanciate a writer
-		    
-		    // Write across the socket connection and flush the buffer
-		    osw.write(message);
-		    osw.flush();
+		    osw.write(message); 	// write across the socket connection
+		    osw.flush();			// flush the buffer
 		}
 		catch(IOException e) {
 			System.out.println("IOException: " + e);
 		}
-		
 	}
 
 
